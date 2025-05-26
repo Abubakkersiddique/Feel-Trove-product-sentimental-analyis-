@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FeelTrove – Features</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1a202c;
+    }
+    .feature-card:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Header -->
+<header class="bg-indigo-600 text-white p-6 shadow-md sticky top-0 z-50">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold">FeelTrove</h1>
+    <nav>
+      <ul class="flex space-x-6 text-lg">
+        <li><a href="index.html#home" class="hover:underline">Home</a></li>
+        <li><a href="features.html" class="hover:underline font-semibold">Feature Page</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Features Section -->
+<section class="bg-gray-50 py-24 px-6 text-gray-800">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-5xl font-bold text-center mb-16" data-aos="fade-up">Powerful Features to Empower Your Insights</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl feature-card" data-aos="zoom-in">
+        <img src="images/sentiment-graph.png" alt="Sentiment graph" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Real-Time Sentiment Graphs</h3>
+        <p>Visualize customer emotions live with dynamic charts that reveal trends instantly.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl feature-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/keyword-insights.png" alt="Keyword analysis" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Keyword & Topic Clustering</h3>
+        <p>Discover what topics matter most using intelligent keyword grouping and NLP clustering.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl feature-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/multilingual-support.png" alt="Multilingual sentiment" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Multilingual Analysis</h3>
+        <p>Analyze sentiment across multiple languages to reach global audiences with confidence.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl feature-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/emotion-wheel.png" alt="Emotion detection" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Emotion Detection</h3>
+        <p>Go beyond polarity—detect emotions like joy, anger, surprise, and more in customer feedback.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl feature-card" data-aos="zoom-in" data-aos-delay="400">
+        <img src="images/api-integration.png" alt="API integration" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Easy API Integration</h3>
+        <p>Plug FeelTrove into your platforms using flexible APIs for email, CRM, chat, and surveys.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl feature-card" data-aos="zoom-in" data-aos-delay="500">
+        <img src="images/custom alerts.png" alt="Custom alerts" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Smart Alerts & Triggers</h3>
+        <p>Set up alerts when sentiment drops or specific keywords spike—perfect for proactive teams.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-indigo-800 text-white p-6 text-center">
+  <p>© 2025 FeelTrove. All rights reserved.</p>
+</footer>
+
+<script>
+  feather.replace();
+  AOS.init();
+</script>
+
+</body>
+</html>

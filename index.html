@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FeelTrove – A trove of feelings and emotions</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Typed.js Typing Effect -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- GSAP Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1a202c;
+      transition: background-color 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    /* Logo Intro Splash */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, #0f0f1a 0%, #000000 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      animation: fadeOut 2s ease-out 3.5s forwards;
+    }
+
+    #intro img {
+      width: 160px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    #typing-text {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      min-height: 2rem;
+    }
+
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 10px #6EE7B7); }
+      to   { filter: drop-shadow(0 0 25px #9333EA); }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    #main-content {
+      display: none;
+    }
+
+    body.loaded #main-content {
+      display: block;
+    }
+
+    .feature-card:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Intro Splash -->
+<div id="intro">
+  <img src="images/logo.png" alt="FeelTrove Logo">
+  <div id="typing-text"></div>
+</div>
+
+<!-- Main Content -->
+<div id="main-content">
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-600"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-indigo-600 text-white p-6 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">FeelTrove</h1>
+      <nav>
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="#home" class="hover:underline">Home</a></li>
+          <li><a href="features.html" class="hover:underline">Features</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative bg-cover bg-center min-h-screen flex items-center justify-center text-white" style="background-image: url('images/banner.webp');">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30"></div>
+    <div class="relative z-10 text-center px-6 max-w-3xl">
+      <h1 id="dynamic-text" class="text-5xl font-bold mb-6 leading-tight" data-aos="fade-up"></h1>
+      <p class="text-lg mb-8 text-gray-200" data-aos="fade-up" data-aos-delay="200">Uncover the emotional depth in text. Explore how people feel—with clarity and AI-powered insight.</p>
+      <a href="#analyze" class="inline-block bg-indigo-600 hover:bg-indigo-700 transition px-8 py-3 text-lg font-semibold rounded-full shadow-lg" data-aos="zoom-in" data-aos-delay="400">Get Started for Free</a>
+      <br><button onclick="document.getElementById('infoModal').classList.remove('hidden')" class="mt-6 text-indigo-200 underline">Why Choose FeelTrove?</button>
+    </div>
+  </section>
+
+  <section  class="bg-gray-100 py-20 text-center">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">How Can Sentiment Analysis Help You?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="bg-white p-8 rounded-lg shadow feature-card" data-aos="flip-left">
+        <h3 class="text-xl font-semibold mb-3">Understand What Matters</h3>
+        <p class="text-gray-600">Uncover insights into customer emotions across feedback channels.</p>
+      </div>
+      <div class="bg-white p-8 rounded-lg shadow feature-card" data-aos="flip-left">
+        <h3 class="text-xl font-semibold mb-3">Detect Patterns Instantly</h3>
+        <p class="text-gray-600">Find issues and trends using advanced natural language processing.</p>
+      </div>
+      <div class="bg-white p-8 rounded-lg shadow feature-card" data-aos="flip-left">
+        <h3 class="text-xl font-semibold mb-3">Act Quickly on Feedback</h3>
+        <p class="text-gray-600">Respond to customer concerns before they escalate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-20 text-center">
+  <h2 class="text-4xl font-bold mb-10" data-aos="fade-up">How Does It Work?</h2>
+  <div class="max-w-3xl mx-auto space-y-10 text-gray-700 px-4 fade-in">
+    <div class="flex items-center space-x-4">
+      <i data-feather="upload-cloud" class="w-8 h-8 text-indigo-600"></i>
+      <p class="text-lg">Upload or connect your data via supported platforms.</p>
+    </div>
+    <div class="flex items-center space-x-4">
+      <i data-feather="cpu" class="w-8 h-8 text-indigo-600"></i>
+      <p class="text-lg">Our AI scans and analyzes text to extract emotional context.</p>
+    </div>
+    <div class="flex items-center space-x-4">
+      <i data-feather="bar-chart-2" class="w-8 h-8 text-indigo-600"></i>
+      <p class="text-lg">View real-time sentiment visualizations and trends.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-indigo-600 text-white py-20 text-center">
+  <h2 class="text-4xl font-bold mb-10" data-aos="fade-up">FeelTrove in Numbers</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-4xl mx-auto text-4xl font-bold">
+    <div><span id="counter2">0</span>+ Analyzed Texts</div>
+    <div><span id="counter3">0</span>% Accuracy</div>
+  </div>
+</section>
+
+<section class="bg-gray-100 py-20 text-center">
+  <h2 class="text-4xl font-bold mb-10" data-aos="fade-up">Seamless Integrations</h2>
+  <div class="flex flex-wrap justify-center gap-8 text-gray-700 text-lg" data-aos="fade-up">
+    <div class="flex items-center space-x-2"><i data-feather="message-square" class="w-5 h-5"></i><span>Intercom</span></div>
+    <div class="flex items-center space-x-2"><i data-feather="users" class="w-5 h-5"></i><span>Hubspot</span></div>
+    <div class="flex items-center space-x-2"><i data-feather="mail" class="w-5 h-5"></i><span>Gmail</span></div>
+    <div class="flex items-center space-x-2"><i data-feather="headphones" class="w-5 h-5"></i><span>Zendesk</span></div>
+    <div class="flex items-center space-x-2"><i data-feather="star" class="w-5 h-5"></i><span>G2</span></div>
+    <div class="flex items-center space-x-2"><i data-feather="thumbs-up" class="w-5 h-5"></i><span>Trustpilot</span></div>
+    <div class="flex items-center space-x-2"><i data-feather="zap" class="w-5 h-5"></i><span>Zapier</span></div>
+  </div>
+</section>
+<section  class="bg-white py-20 text-center">
+  <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Meet the Team</h2>
+  <div class="max-w-md mx-auto">
+    <img src="images/member-logo.JPEG" alt="abubakker siddique" class="rounded-full w-50 h-50 mx-auto mb-4 shadow-md">
+    <h3 class="text-xl font-semibold">Abubakker siddique </h3>
+    <p class="text-gray-600">Founder & Developer of FeelTrove</p>
+  </div>
+</section>
+
+
+<section class="bg-white py-20 text-center">
+  <div class="max-w-3xl mx-auto" data-aos="fade-up">
+    <blockquote class="text-xl italic text-gray-700 mb-4">"With FeelTrove, we finally have an accurate way to measure client happiness in real-time. This is crucial for fast decisions and improving retention."</blockquote>
+    <p class="font-semibold">AbuBakker Siddique</p>
+  </div>
+</section>
+
+
+  <!-- MODAL -->
+  <div id="infoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-lg shadow-lg max-w-sm w-full p-6 text-left">
+      <h3 class="text-xl font-bold mb-2">Why FeelTrove?</h3>
+      <p class="text-gray-700 mb-4">FeelTrove helps you uncover deep emotional insights using state-of-the-art AI, helping businesses grow smarter and more empathetically.</p>
+      <button onclick="document.getElementById('infoModal').classList.add('hidden')" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Close</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-indigo-800 text-white p-6 text-center">
+    <p>© 2025 FeelTrove. All rights reserved.</p>
+  </footer>
+</div>
+
+<!-- JS SCRIPTS -->
+<script>
+  // Typing effect on intro
+  const typed = new Typed("#typing-text", {
+    strings: ["Welcome to FeelTrove", "Empathy Powered by AI", "Analyzing Emotions, Instantly"],
+    typeSpeed: 60,
+    backSpeed: 30,
+    loop: true
+  });
+
+  // Hide intro and show main content
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.body.classList.add('loaded');
+    }, 4000);
+  });
+
+  // Animated Counters
+  function animateCounter(id, target, duration) {
+    const element = document.getElementById(id);
+    let start = 0;
+    const step = target / (duration / 10);
+    const interval = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        element.textContent = target;
+        clearInterval(interval);
+      } else {
+        element.textContent = Math.floor(start);
+      }
+    }, 10);
+  }
+
+  window.addEventListener("load", () => {
+    animateCounter("counter1", 1200, 1000);
+    animateCounter("counter2", 50000, 1200);
+    animateCounter("counter3", 98, 1000);
+  });
+
+  // Preloader
+  window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    setTimeout(() => preloader.style.display = 'none', 500);
+  });
+
+  // Feather Icons & AOS
+  feather.replace();
+  AOS.init();
+
+  // GSAP Animation
+  gsap.from("header", { duration: 2, y: -100, opacity: 0, ease: "bounce" });
+  gsap.from("section", { duration: 2, y: 50, opacity: 0, stagger: 0.3, delay: 1 });
+
+  // Typing animation for main hero
+  const dynamicTexts = [
+    "Explore Emotions with AI Insight",
+    "Feel the Pulse of Your Feedback",
+    "AI-Powered Emotion Analysis"
+  ];
+  let i = 0;
+  const dynamicText = document.getElementById("dynamic-text");
+  dynamicText.textContent = dynamicTexts[0];
+  setInterval(() => {
+    dynamicText.textContent = dynamicTexts[i];
+    i = (i + 1) % dynamicTexts.length;
+  }, 3000);
+</script>
+</body>
+</html>
