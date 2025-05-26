@@ -42,7 +42,7 @@ def login():
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     if st.button("Login"):
-        if username == "admin" and password == "feel trove":
+        if username == "admin" and password == "feeltrove@2004":
             st.session_state["authenticated"] = True
             st.success("Login successful! Redirecting to dashboard...")
             st.rerun()
