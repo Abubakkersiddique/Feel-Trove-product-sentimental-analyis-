@@ -34,7 +34,6 @@ if "authenticated" not in st.session_state:
 
 def login():
     st.title("🔐 Login to Feel Trove")
-    st.image("images/logo.png", width=200)  # You can adjust the path and width as needed
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     if st.button("Login"):
