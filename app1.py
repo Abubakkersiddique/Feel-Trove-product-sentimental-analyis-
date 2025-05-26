@@ -24,12 +24,7 @@ nltk.download('stopwords')
 # Initializations
 sia = SentimentIntensityAnalyzer()
 stop_words = set(stopwords.words('english'))
-emotion_model = pipeline(
-    "text-classification", 
-    model="distilbert-base-uncased-finetuned-sst-2-english", 
-    return_all_scores=False,
-    device=-1
-)
+emotion_model = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base", return_all_scores=False)
 
 # Page config
 st.set_page_config(page_title="Feel Trove Dashboard", layout="wide")
