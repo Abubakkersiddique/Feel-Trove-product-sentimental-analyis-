@@ -1,0 +1,14 @@
+streamlit>=1.32.0
+pandas>=2.2.1
+numpy>=1.24.4
+plotly>=5.20.0
+wordcloud>=1.9.3
+matplotlib>=3.8.4
+nltk>=3.8.1
+deep-translator>=1.11.4
+transformers>=4.40.0
+torch>=2.2.2
+scikit-learn>=1.4.2
+sqlalchemy>=2.0.29
+pymysql>=1.1.0
+psycopg2-binary>=2.9.9
