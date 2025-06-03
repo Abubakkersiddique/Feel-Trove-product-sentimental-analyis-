@@ -29,29 +29,7 @@ emotion_model = pipeline("text-classification", model="j-hartmann/emotion-englis
 # Page config
 st.set_page_config(page_title="Feel Trove Dashboard", layout="wide")
 
-if "authenticated" not in st.session_state:
-    st.session_state["authenticated"] = False
 
-def login():
-    st.title("🔐 Login to Feel Trove")
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
-    if st.button("Login"):
-        if username == "admin" and password == "feel trove":
-            st.session_state["authenticated"] = True
-            st.success("Login successful! Redirecting to dashboard...")
-            st.rerun()
-        else:
-            st.error("Invalid credentials. Please try again.")
-
-if not st.session_state["authenticated"]:
-    login()
-    st.stop()
-
-# --- Logout Button ---
-if st.sidebar.button("🚪 Logout"):
-    st.session_state["authenticated"] = False
-    st.rerun()
 
 # Theme
 if "theme" not in st.session_state:
